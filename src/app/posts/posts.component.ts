@@ -1,7 +1,6 @@
-import { AfterContentChecked, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Post } from '../interface/post';
 import { PostService } from '../service/post.service';
-import { HttpEventType } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -20,7 +19,7 @@ export class PostsComponent implements OnInit {
   constructor(private postService: PostService){}
 
   ngOnInit(): void {
-    this.posts = this.postService.getAllposts();
+   
   }
 
   onFileSelected(event: any) {
@@ -44,18 +43,4 @@ export class PostsComponent implements OnInit {
       this.imageUrl = null;
       return this.showValidationsErros = false;
       }
-
-      isEmpty(): boolean {
-        if (this.posts.length > 0){
-          return true
-      }
-      else {
-        return false
-      }
-    }
-
-    deletePost(post: Post ) {
-      const index = this.posts.indexOf(post)
-      this.postService.deletePost(index)
-    }
 }

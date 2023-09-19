@@ -5,11 +5,13 @@ import { UserComponent } from './user/user.component';
 import { UserResolver } from './service/user.resolver';
 import { HomeComponent } from './home/home.component';
 import { PostsComponent } from './posts/posts.component';
+import { ViewPostsComponent } from './view-posts/view-posts.component';
 
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
   { path: 'posts', component: PostsComponent},
+  { path:  'view-posts', component: ViewPostsComponent },
   { path : 'users', component: UsersComponent},
   { path : 'user/:id', component: UserComponent, resolve: { resolvedResponse: UserResolver}},
   { path : '**', redirectTo: 'home'},
