@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'posts', component: PostsComponent},
   { path : 'users', component: UsersComponent},
   { path : 'user/:id', component: UserComponent, resolve: { resolvedResponse: UserResolver}},
-  { path : '**', redirectTo: 'users'},
+  { path : '**', redirectTo: 'home'},
 ];
 
 @NgModule({
