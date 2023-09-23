@@ -27,8 +27,8 @@
                 <img [src]="post.image" height="50%" width="50%" class="avatar" alt="Avatar" alt="">
               </td>
               <app-post 
-              (deletePostEvent)="deletePost()"
-              (editPostEvent)="editEvent()"
+              (deletePostEvent)="onDeletePost(post)"
+              (editPostEvent)="onEditPost(post)"
               >
               </app-post>
             </tr>
