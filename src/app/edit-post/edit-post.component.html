@@ -1,0 +1,44 @@
+<h1 class="title">Edit Posts</h1>
+<mat-dialog-content>
+    <form #form="ngForm" (ngSubmit)="onEditPost(form)">
+        <div class="container">
+            <div class="control">
+                <table class="table table-striped table-hover">
+                    <thead>
+                      <tr>
+                        <th>
+                            <input 
+                            type="text"
+                            [ngModel]="post.title"
+                            name="title">
+                        </th>
+                        <th>
+                            <input 
+                            type="text"
+                            [ngModel]="post.content"
+                            name="content">
+                        </th>
+                        <th>
+                            <img 
+                            [src]="imageUrl"
+                             class="form-group">
+                                <label for="image">Choose an image</label>
+                                <br>
+                                <input 
+                                type="file" 
+                                (change)="onFileSelected($event)"
+                                id="image" 
+                                ngModel name="image"
+                            >
+                        </th>
+                      </tr>
+                    </thead>
+                </table>
+               
+            </div>
+        </div>
+        <br>
+        <button class="btn btn-primary" type="submit">Update</button>
+        <button class="btn btn-danger" type="button" (click)="close()">Cancel</button>
+    </form>
+</mat-dialog-content>
