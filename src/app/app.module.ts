@@ -9,13 +9,17 @@ import { AppComponent } from './app.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TestInterceptor } from './interceptor/test.interceptor';
+// import { TestInterceptor } from './interceptor/test.interceptor';
 import { UsersComponent } from './users/users.component';
 import { UserComponent } from './user/user.component';
 import { HomeComponent } from './home/home.component';
 import { PostsComponent } from './posts/posts.component';
 import { PostComponent } from './post/post.component';
 import { ViewPostsComponent } from './view-posts/view-posts.component';
+import { EditPostComponent } from './edit-post/edit-post.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
 
 
 @NgModule({
@@ -26,7 +30,8 @@ import { ViewPostsComponent } from './view-posts/view-posts.component';
     HomeComponent,
     PostsComponent,
     PostComponent,
-    ViewPostsComponent
+    ViewPostsComponent,
+    EditPostComponent
   ],
   imports: [
     BrowserModule,
@@ -34,10 +39,14 @@ import { ViewPostsComponent } from './view-posts/view-posts.component';
     HttpClientModule,
     FormsModule,
     MatDialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatFormFieldModule,
     
   ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass: TestInterceptor, multi: true}],
+  providers: [
+    // {provide: HTTP_INTERCEPTORS, useClass: TestInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
