@@ -7,7 +7,6 @@ import { HomeComponent } from './home/home.component';
 import { PostsComponent } from './posts/posts.component';
 import { ViewPostsComponent } from './view-posts/view-posts.component';
 
-
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
   { path: 'posts', component: PostsComponent},
